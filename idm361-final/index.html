@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>ColorCode - Color Scheme Generator</title>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Sets the style of the status bar for a web application. Values ['black', 'default', 'black-translucent'] -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Make the app title different than the page title. -->
+    <meta name="apple-mobile-web-app-title" content="ColorCode">
+
+    <!-- Disable automatic phone number detection. -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Apple Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/colorcode-57x57.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="dist/img/colorcode-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="dist/img/colorcode-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="dist/img/colorcode-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="dist/img/colorcode-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="dist/img/colorcode-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="dist/img/colorcode-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="dist/img/colorcode-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/img/colorcode-180x180.png" />
+
+    <!-- Splash Screen -->
+    <link rel="apple-touch-startup-image" href="dist/img/colorcode-splash.jpg" />
+
+    <!-- CSS -->
+    <link href="dist/css/normalize.css" rel="stylesheet">
+    <link href="dist/css/add2home.css" rel="stylesheet">
+    <link href="dist/css/app.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Portrait View -->
+    <div class="page">
+      <header class="header">
+        <img class="logo-header" src="dist/img/colorcode-header.png" alt="ColorCode">
+
+        <!-- refresh colors -->
+            <button id="refresh">&#8635;</button>
+      </header>
+
+      <div class="main-content">
+        <div class="container" id="container-1"><h5 class ="hexcode">a93226</h5></div>
+        <div class="container" id="container-2"><h5 class ="hexcode">cb4335</h5></div>
+        <div class="container" id="container-3"><h5 class ="hexcode">d68910</h5></div>
+        <div class="container" id="container-4"><h5 class ="hexcode">18375a</h5></div>
+        <div class="container" id="container-5"><h5 class ="hexcode">2f2d2e</h5></div>
+      </div>
+
+    </div>
+
+<body>
+
+<!-- Modal -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <p>Shake phone to generate new color scheme.</p>
+  </div>
+</div>
+
+
+    <!-- Landscape View -->
+    <div class="landscape-page">
+        <img src="dist/img/landscape-colorcode.png" alt="Please rotate device to portrait mode.">
+    </div>
+
+<script>
+// Get modal, works with Id
+var modal = document.getElementById('popup');
+
+// span element (x) closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// Open the modal once app loads
+window.onload = function() {
+    modal.style.display = "block";
+}
+
+// When (x) is clicked, close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// If anywhere outside of the modal is clicked, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Customize configuration variable BEFORE loading
+      var addToHomeConfig = {
+        touchIcon: true //by default it is false
+      };
+</script>
+
+
+
+    <!-- JAVASCRIPT-
+    <script>
+    
+
+    </script>-->
+    <script src="dist/js/add2home.js"></script>
+    <script src="dist/js/app.js"></script>
+  </body>
+
+</html>
