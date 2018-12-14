@@ -38,91 +38,43 @@
     <link href="dist/css/app.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body onload="loadSaved()">
     <!-- Portrait View -->
     <div class="page">
       <header class="header">
         <img class="logo-header" src="dist/img/colorcode-header.png" alt="ColorCode">
-
-        <!-- refresh colors -->
-            <button id="refresh" onclick="randomColors()">&#8635;</button>
-
-        <!-- make this go to saved history -->
+            <!-- Back button to main page -->
+            <button id="back" onclick="function()">&#x3c;</button>
+            <!-- Saved colors -->
             <button id="saved">&#x2605;</button>
+    </header>
 
-      </header>
+        <ul class="saved-colors">
+        <!-- <li class="saved-colors-list"><p class="colors-list">colors, colors, colors</p></li> -->
+        </ul>
 
-      <div class="main-content">
-        <div class="container" id="container-1"><h5 class ="hexcode">#A93226</h5></div>
-        <div class="container" id="container-2"><h5 class ="hexcode">#CB4335</h5></div>
-        <div class="container" id="container-3"><h5 class ="hexcode">#D68910</h5></div>
-        <div class="container" id="container-4"><h5 class ="hexcode">#18375A</h5></div>
-        <div class="container" id="container-5"><h5 class ="hexcode">#2F2D2E</h5></div>
-      </div>
-
-    </div>
-
-<body>
-
-<!-- Modal -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close">&times;</span>
-    <p id="modal-text">Click &#8635; to generate new color scheme. Click &#x2605; to see saved colors.</p>
-  </div>
-</div>
+    <button id="delete" onclick="deleteColors()">Clear</button>
 
 
-    <!-- Landscape View -->
+
+   <!-- Landscape View -->
     <div class="landscape-page">
         <img src="dist/img/landscape-colorcode.png" alt="Please rotate device to portrait mode.">
     </div>
 
-<script>
-// Get modal, works with Id
-var modal = document.getElementById('popup');
-
-// span element (x) closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// Open the modal once app loads
-window.onload = function() {
-    modal.style.display = "block";
-}
-
-// When (x) is clicked, close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// If anywhere outside of the modal is clicked, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-    // Link star icon to saved colors page
-    document.getElementById("saved").onclick = function () {
-        location.href = "saved.html";
+    <!-- JAVASCRIPT-->
+    <script>
+    //	Customize configuration variable BEFORE loading addToHome.js file
+    var addToHomeConfig = {
+      touchIcon: true
     };
 
+    // Link the back button to the main page
+    document.getElementById("back").onclick = function () {
+        location.href = "index.html";
+    };
 
-
-// Customize configuration variable BEFORE loading
-      var addToHomeConfig = {
-        touchIcon: true //by default it is false
-      };
-
-</script>
-
-
-
-    <!-- JAVASCRIPT-
-    <script>
-    
-
-    </script>-->
+    </script>
     <script src="dist/js/add2home.js"></script>
     <script src="dist/js/app.js"></script>
   </body>

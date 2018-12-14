@@ -10,6 +10,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@font-face {
+  font-family: 'Champagne & Limousines';
+  src: url("../fonts/Champagne & Limousines.ttf");
+}
+
 h1,
 h2,
 h3,
@@ -73,6 +78,12 @@ html, body {
   width: 100%;
 }
 
+body {
+-webkit-user-select: none;
+-webkit-tap-highlight-color: transparent;
+-webkit-touch-callout: none;
+}
+
 @-webkit-keyframes modalFade {
   0%   { 
     opacity: 0; 
@@ -122,13 +133,33 @@ html, body {
 #refresh {
   display: inline;
   color: #333333;
-  font-size: 22px;
+  font-size: 18px;
   float: left;
-  transform: translateY(-40px);
+  transform: translateY(-35px);
   margin-bottom: -50px;
   margin-left: 20px;
 }
 
+#saved {
+  display: inline;
+  color: #333333;
+  font-size: 14px;
+  float: right;
+  transform: translateY(-33px);
+  margin-bottom: -50px;
+  margin-right: 20px;
+}
+
+#back {
+  display: inline;
+  color: #333333;
+  font-size: 18px;
+  font-weight: bolder;
+  float: left;
+  transform: translateY(-35px);
+  margin-bottom: -50px;
+  margin-left: 25px;
+}
 
 /* Main Content */
   .main-content {
@@ -171,12 +202,25 @@ html, body {
   line-height: 123px; /* div container height */
 }
 
+.saved-colors {
+    margin: 10px 20px;
+}
+
+.saved-colors-list {
+  margin: 15px 0;
+}
+
+.colors-list {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.9375rem;
+}
+
 /* Modal */
 .popup {
-    -webkit-animation: modalFade .8s linear;
-    -moz-animation:    modalFade .8s linear;
-    -o-animation:      modalFade .8s linear;
-    animation:         modalFade .8s linear;
+    -webkit-animation: modalFade .4s linear;
+    -moz-animation:    modalFade .4s linear;
+    -o-animation:      modalFade .4s linear;
+    animation:         modalFade .4s linear;
     display: none;
     position: fixed;
     padding-top: 130px;
@@ -197,14 +241,34 @@ html, body {
     width: 75%;
 }
 
+#modal-text {
+  font-family: 'Champagne & Limousines', Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
 /* Close Button */
 .close {
     color: #111111;
     float: right;
-    font-size: 35px;
+    font-size: 22px;
     font-weight: bolder;
 }
 
+#delete {
+  font-family: 'Champagne & Limousines', Helvetica, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #DC143C;
+  border: 2px solid #DC143C;
+  border-radius: 5px;
+  width: 25%;
+  padding: 3px;
+  margin: 0 auto;
+}
 
 @media only screen and (orientation: portrait) {
   .landscape-page {
