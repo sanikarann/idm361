@@ -5,8 +5,6 @@ function init() {
     checkForAppUpdates();
 }
 
-
-
 function routeTo(pathToPage) {
     location.href = pathToPage;
 }
@@ -28,24 +26,19 @@ function checkFirstLaunch() {
     }
 }
 /* Only get popup to show on first launch
-
-  sessionStorage.setItem('firstLaunch', '1');
-  if (!sessionStorage.getItem('firstLaunch') === "1")
-      {
-         document.querySelector('.popup').show();
-      }
+localStorage.setItem('firstLaunch', '1');
+if (!sessionStorage.getItem('firstLaunch') === '1') {
+    document.querySelector('.popup').show();
+}
 */
 
-
-
 function randomColors() {
-
     // This will show the colors change on container  
     //  var box = document.querySelector('.container').style.backgroundColor = newColor;
     var row = document.querySelectorAll('.container');
     var hexCode = document.querySelectorAll('.hexcode');
-    // create empty array
 
+    // create empty array
     var colors = [];
 
     for (let i = 0; i < row.length; i++) {
@@ -55,10 +48,9 @@ function randomColors() {
         colors.push(newColor);
     }
 
-// issue: loops through every container, but only last RGB value in array is being displayed
     for (let i = 0; i < hexCode.length; i++) {
-      hexCode[i].innerHTML = colors[i]; // changed newColor to colors[i]
-      console.log('loop');
+        hexCode[i].innerHTML = colors[i]; // changed newColor to colors[i] - each hexcode in array is displayed correctly
+        console.log('loop');
     }
 
     console.log(colors);
@@ -84,9 +76,9 @@ function makeColor() {
         var num = Math.floor(Math.random() * 256);
         array.push(num);
     }
-  var newHex = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6); // random hexcodes
-  //var newRgb = 'rgb(' + arr[0] + ', ' + arr[1] + ', ' + arr[2] + ')';
-  return newHex;
+    var newHex = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6); // random hexcodes
+    //var newRgb = 'rgb(' + arr[0] + ', ' + arr[1] + ', ' + arr[2] + ')';
+    return newHex;
 }
 
 
@@ -105,8 +97,8 @@ function getColors() {
 
 // when the saved page loads, get the colors from the array to show up
 function loadSaved() {
-  var colorsArray = getColors();
-  var colorsGroup = document.querySelector('.saved-colors');
+    var colorsArray = getColors();
+    var colorsGroup = document.querySelector('.saved-colors');
 
     for (var i in colorsArray) {
         colorsGroup.innerHTML += '\
@@ -119,11 +111,9 @@ function loadSaved() {
 /* DELETE ALL COLORS IN SAVED PAGE */
 function deleteColors() {
     localStorage.clear();
-  // Reload Page
-  location.reload();
+    // Reload Page
+    location.reload();
 };
-
-
 
 function checkForAppUpdates() {
     window.applicationCache.addEventListener('updateready', function(e) {
